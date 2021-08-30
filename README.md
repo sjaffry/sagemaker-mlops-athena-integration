@@ -1,3 +1,6 @@
+## Overview
+This repository modifies the **Abalone** sample MLOps project within Sagemaker Studio to show how you can integrate Amazon Athena query as an input into the data processing step of Sagemaker Pipelines. It replaces the default approach of working with a csv file downloaded from an S3 bucket with an Athena query output.
+
 ## Layout of the SageMaker ModelBuild Project Template
 
 The template provides a starting point for bringing your SageMaker Pipeline development to production.
@@ -26,7 +29,7 @@ The template provides a starting point for bringing your SageMaker Pipeline deve
 ```
 
 ## Start here
-This is a sample code repository that demonstrates how you can organize your code for an ML business solution. This code repository is created as part of creating a Project in SageMaker. 
+This is a sample code repository that demonstrates how you can organize your code for an ML business solution. Clone this repo into a new Sagemaker Studio project.
 
 In this example, we are solving the abalone age prediction problem using the abalone dataset (see below for more on the dataset). The following section provides an overview of how the code is organized and what you need to modify. In particular, `pipelines/pipelines.py` contains the core of the business logic for this problem. It has the code to express the ML steps involved in generating an ML model. You will also find the code for that supports preprocessing and evaluation steps in `preprocess.py` and `evaluate.py` files respectively.
 
@@ -87,9 +90,10 @@ The `tox` testing framework configuration:
 You need to create an Athena table from the abalone dataset avaialble in the following public S3 bucket.
 s3://sagemaker-servicecatalog-seedcode-us-east-1/dataset/abalone-dataset.csv
 
-Database: [sagemaker-pipelines-demo]
+### Database and table names used in this demo
+**Database**: [sagemaker-pipelines-demo]
 <br/>
-Table: [abalone_dataset] 
+**Table**: [abalone_dataset] 
 <br/><br/>
 
 ### Table definition
